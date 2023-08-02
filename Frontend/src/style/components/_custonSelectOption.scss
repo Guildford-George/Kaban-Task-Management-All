@@ -1,0 +1,14 @@
+@import "../helper/mixin";
+.custom-options{
+    position: absolute;
+    bottom: 70%;
+    left: 0;
+    width: 100%;
+    padding: 7px 0;
+    border-radius: 4px;
+    .custom-opt{
+        @include text-rg;
+        padding: 2px 10px;
+        cursor: pointer;
+    }
+}

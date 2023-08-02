@@ -1,0 +1,64 @@
+@import "../helper/mixin";
+form{
+    width: 400px;
+    .form-head{
+        margin-bottom: 1rem;
+        @include font-lg
+    }
+    label,.selected-label{
+        display: inline-block;
+        margin-bottom: 4px;
+        @include text-md
+    }
+    .form-field{
+        margin-bottom: .8rem;
+
+        input{
+            padding: 0 10px;
+            width: 100%;
+            border-radius: 4px;
+            @include text-rg
+        }
+        
+        .textarea{
+            width: 100%;
+            padding: 10px;
+            line-height: 18px;
+            border-radius: 4px;
+            textarea{
+                @include text-rg;
+                font-size: 12px;
+                text-align: justify;
+                resize: none;
+                width: 100%;
+                outline: none;
+                border: none;
+
+            }
+        }
+    }
+    .group-field{
+        margin-bottom: 17px;
+    }
+    .form-field-flex{
+        display: flex;
+        align-items: center;
+        .icon{
+            font-size: 1.2rem;
+            margin-left: 5px;
+        }
+    }
+    .selector{
+        position: relative;
+        
+    }
+
+    .form-btn{
+        display: inline-block;
+        text-align: center;
+        border-radius: 20px;
+        width: 100%;
+        padding: 7px 10px;
+        cursor: pointer;
+    }
+}

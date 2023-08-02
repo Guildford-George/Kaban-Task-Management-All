@@ -1,0 +1,39 @@
+@mixin font-xl{
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: $bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+@mixin font-lg{
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: $bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+@mixin font-md{
+    font-size: 15px;
+    line-height: 19px;
+    font-weight: $bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+@mixin font-sm{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: $bold;
+    letter-spacing: 2.4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+@mixin text-rg{
+    font-size: 13px;
+    line-height: 23px;
+    font-weight: $medium;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+@mixin text-md{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: $bold;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+

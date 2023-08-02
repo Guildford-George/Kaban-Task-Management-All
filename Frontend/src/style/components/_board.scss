@@ -1,0 +1,104 @@
+@import "../helper/mixin";
+.board{
+    width: 100%;
+    border-top: .5px solid #696969;
+    &>div{
+        width: 100%;
+        height: calc(100vh - $headerHeight);
+    }
+
+    .board-columns{
+        padding: 2rem 1rem;
+        .column-content{
+            display: flex;
+        }
+    }
+    .add-new-column{
+        
+        padding-top: 3rem;
+        div{
+            height: 100%;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        button{
+            @include font-lg
+        }
+    }
+    .column-card{
+        margin-right: 1rem;
+        .card-head{
+            .card-name{
+                text-transform: capitalize;
+            }
+            height: 2rem;
+            &:hover{
+                button{
+                    display: inline;
+                }
+            }
+            .card-info{
+                display: flex;
+                align-items: center;
+                @include font-sm;
+            }
+            .card-bullet{
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                margin-right: 7px;
+            }
+        }
+
+        .card-action{
+            button{
+                display: none;
+            }
+        }
+
+        .card-body{
+            margin-top: 1rem;
+        }
+
+        .task-card{
+            width: 200px;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            &:not(.task-card:last-child){
+                margin-bottom: 13px;
+            }
+
+            .task-title{
+                @include font-md;
+                margin-bottom: 5px
+            }
+            .subtask-stat{
+                @include text-md;
+                margin-bottom: 7px;
+            }
+        }
+    }
+    .emptyColumn{
+        
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            p{
+                @include font-lg;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

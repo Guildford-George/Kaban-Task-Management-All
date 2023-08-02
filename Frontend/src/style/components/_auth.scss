@@ -1,0 +1,30 @@
+.auth{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $lightGrey;
+
+    h1,p{
+        text-align: center;
+    }
+    form{
+        background-color: $white;
+        padding: 1.5rem;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px grey;
+    }
+    
+    a{
+        color:$black
+    }
+    
+    .form-btn,.mes{
+        margin-bottom: 1rem;
+    }
+    .navlink-center{
+        display: flex;
+        justify-content: center;
+    }
+}

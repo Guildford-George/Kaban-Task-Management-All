@@ -1,0 +1,27 @@
+@import "../helper/mixin";
+.delete{
+    width: 400px;
+    h3{
+        color: $red;
+        margin-bottom: 1rem;
+        @include font-lg;
+    }
+
+    .notification-message{
+        margin-bottom: 1rem;
+        @include text-rg;
+    }
+
+    .button-group{
+        display: flex;
+        width: 100%;
+        button{
+            display: block;
+            width: 100%;
+
+            &:first-child{
+                margin-right: 1rem;
+            }
+        }
+    }
+}

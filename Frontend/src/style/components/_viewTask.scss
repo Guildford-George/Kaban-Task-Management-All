@@ -1,0 +1,51 @@
+@import "../helper/mixin";
+.modal-container{
+    width: 350px;
+    .task-title{
+        p{
+            @include font-lg
+        }
+        .icon{
+            font-size: 1.2rem;
+            margin-left: 20px
+        }
+        &>div{
+            position: relative;
+            .menu-item{
+                @include text-md
+            }
+        }
+    }
+    .task-description, .subtask-stat, .task-status p{
+        @include text-md;
+        line-height: 1.5;
+    }
+    .task-description{
+        margin: 1rem 0;
+    }
+    .task-all-subtasks{
+        margin-bottom: 1.2rem;
+    }
+    .subtask{
+        display: flex;
+        align-items: center;
+        padding: 4px 7px;
+        border-radius: 4px;
+        cursor: pointer;
+        @include text-md;
+        .icon{
+            display: flex;
+            align-items: center;
+            margin-right: 12px;
+        }
+        
+        &:not(&:last-child){
+            margin-bottom: 5px;
+        }
+    }
+
+    .task-status .icon{
+        font-size: 1rem;
+    }
+
+}

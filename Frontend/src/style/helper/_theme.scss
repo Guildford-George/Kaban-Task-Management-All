@@ -1,0 +1,500 @@
+@import "./variables";
+@mixin lightMode {
+  // a,p{
+  //     color: $black;
+  // }
+  .primary-btn {
+    background-color: $blue;
+    color: $white;
+    &:hover {
+      background-color: $blueLight;
+      transition: background-color 0.3s;
+    }
+    &:disabled {
+      background-color: $blueLight;
+      opacity: 25%;
+    }
+  }
+
+  .danger-btn {
+    background-color: $red;
+    color: $white;
+    &:hover {
+      background-color: $redLight;
+      transition: background-color 0.5s;
+    }
+  }
+
+  .neutral-btn {
+    background-color: #625fc71a;
+    color: $blue;
+    &:hover {
+        background-color: #625fc740;
+      transition: opacity 0.5s;
+    }
+  }
+  .menu-opt-card {
+    background-color: $white;
+    box-shadow: 1px 1px 5px rgb(202, 202, 202);
+    .menu-item {
+      background-color: transparent;
+      &:hover {
+        background-color: $lightGrey;
+      }
+    }
+
+    .menu-item:first-child {
+      color: $mediumGrey;
+    }
+
+    .menu-item:last-child {
+      color: $red;
+    }
+  }
+
+  nav,
+  header {
+    background-color: $white;
+    color: $black;
+  }
+
+  .btn-icon:disabled {
+    opacity: 25%;
+  }
+
+
+//   sidebar
+  .sidebar {
+    background-color: $white;
+    color: $mediumGrey;
+    border-right: 1px solid $lightLine;
+    a,
+    p {
+      color: $mediumGrey;
+    }
+
+    .board-item {
+      a:hover {
+        background-color: #6460c733;
+        color: $blue;
+      }
+
+      a.active {
+        background-color: $blue;
+        color: $white;
+      }
+
+      button {
+        color: $blue;
+      }
+    }
+
+    .app-hide:hover {
+      color: $darkGrey;
+      opacity: 70%;
+    }
+    .app-mode {
+      div {
+        background: $lightGrey;
+        box-shadow: 1px 1px 5px rgb(216, 216, 216);
+      }
+      .mode-toggle{
+        background-color: $blue;
+        .mode-toggle-ball{
+          background-color: $white;
+          left: 2px;
+          transition: all .5s;
+        }
+      }
+    }
+  }
+
+//   Board-Coloumn
+  .board {
+    & > div {
+      background-color: $lightGrey;
+    }
+
+    .add-new-column {
+      div {
+        background-color: $linear;
+      }
+      button {
+        color: $mediumGrey;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+    .column-card {
+      .card-head {
+        color: $mediumGrey;
+      }
+      .icon {
+        color: $mediumGrey;
+        &:first-child {
+          margin-right: 5px;
+        }
+        &:hover {
+          color: $darkLine;
+        }
+      }
+
+      .task-card {
+        background-color: $white;
+        box-shadow: 0px 3px 5px #afafaf;
+        .subtask-stat {
+          color: $mediumGrey;
+        }
+
+        &:hover {
+          box-shadow: 0px 3px 5px #8d8d8d;
+        }
+      }
+    }
+
+    .emptyColumn {
+      p {
+        color: $mediumGrey;
+      }
+    }
+  }
+
+//   form
+    form{
+        color: $mediumGrey;
+        .form-head{
+            color: $black;
+        }
+
+        input, .textarea{
+            border: 1px solid #828FA340;
+            background-color: transparent;
+            &:focus{
+                outline: 1px solid $blue;
+            }
+        }
+
+        .selected-options{
+            border: 1px solid #828FA340;
+            color: $black;
+            &:hover{
+                border-color: $blue;
+            }
+            .icon{
+                color: $blue;
+            }
+        }
+
+        .custom-options{
+            background-color: $white;
+            box-shadow: -1px -1px 7px rgb(163, 163, 163);
+            
+            .custom-opt:hover{
+                color: $blue;
+                background-color: #6460c733;
+            }
+        }
+    }
+
+    .view-task{
+        color: $black;
+
+        .opt-btn{
+            color: $mediumGrey;
+            &:hover{
+                color: #000000a4;
+            }
+        }
+        .task-description,.subtask-stat, .task-status p{
+            color: $mediumGrey;
+        }
+
+        .selected-options{
+            border: 1px solid #828FA3;
+        }
+        
+        .subtask{
+            background-color: $lightGrey;
+            .icon{
+                color: #828FA3
+            }
+            &.done{
+                p{
+                    color: #00000080;
+                }
+                .icon svg{
+                    fill: $blue;
+                }
+            }
+            &:hover{
+                background-color: #635FC740;
+            }
+        }
+        .task-status .icon{
+            color: $blue;
+        }
+    }
+//   Others
+  
+
+  .modal{
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .modal-content{
+        background-color: $white;
+    }
+  }
+  .main {
+    background-color: $lightGrey;
+  }
+}
+@mixin darkMode {
+  // a,p{
+  //     color: $black;
+  // }
+  .primary-btn {
+    background-color: $blue;
+    color: $white;
+    &:hover {
+      background-color: $blueLight;
+      transition: background-color 0.3s;
+    }
+    &:disabled {
+      background-color: $blueLight;
+      opacity: 25%;
+    }
+  }
+
+  .danger-btn {
+    background-color: $red;
+    color: $white;
+    &:hover {
+      background-color: $redLight;
+      transition: background-color 0.5s;
+    }
+  }
+
+  .neutral-btn {
+    background-color: #625fc71a;
+    color: $blue;
+    &:hover {
+        background-color: #625fc740;
+      transition: opacity 0.5s;
+    }
+  }
+  .menu-opt-card {
+    background-color: $white;
+    box-shadow: 1px 1px 5px rgb(202, 202, 202);
+    .menu-item {
+      background-color: transparent;
+      &:hover {
+        background-color: $lightGrey;
+      }
+    }
+
+    .menu-item:first-child {
+      color: $mediumGrey;
+    }
+
+    .menu-item:last-child {
+      color: $red;
+    }
+  }
+
+  nav,
+  header {
+    background-color: $darkGrey;
+    color: $white;
+  }
+
+  .btn-icon:disabled {
+    opacity: 25%;
+  }
+
+
+//   sidebar
+  .sidebar {
+    background-color: $darkGrey;
+    color: $mediumGrey;
+    border-right: 1px solid #696969;
+    a,
+    p {
+      color: $mediumGrey;
+    }
+
+    .board-item {
+      a:hover {
+        background-color: #6460c733;
+        color: $blue;
+      }
+
+      a.active {
+        background-color: $blue;
+        color: $white;
+      }
+
+      button {
+        color: $blue;
+      }
+    }
+
+    .app-hide:hover {
+      color: $darkGrey;
+      opacity: 70%;
+    }
+    .app-mode {
+      div {
+        background: $veryDarkGrey;
+        // box-shadow: 1px 1px 5px rgb(216, 216, 216);
+      }
+      .mode-toggle{
+        background-color: $blue;
+        .mode-toggle-ball{
+          background-color: $white;
+          left: calc(100% - 2px);
+          transform: translate(-100%, -50%);
+          transition: all .5s;
+        }
+      }
+    }
+  }
+
+//   Board-Coloumn
+  .board {
+    & > div {
+      background-color: $veryDarkGrey;
+    }
+
+    .add-new-column {
+      div {
+        background-color: $linear;
+      }
+      button {
+        color: $mediumGrey;
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+    .column-card {
+      .card-head {
+        color: $mediumGrey;
+      }
+      .icon {
+        color: $mediumGrey;
+        &:first-child {
+          margin-right: 5px;
+        }
+        &:hover {
+          color: $darkLine;
+        }
+      }
+
+      .task-card {
+        background-color: $darkGrey;
+        .subtask-stat {
+          color: $mediumGrey;
+        }
+
+        &:hover {
+          box-shadow: 0px 3px 5px #3a3a3a;
+        }
+      }
+    }
+
+    .emptyColumn {
+      p {
+        color: $mediumGrey;
+      }
+    }
+  }
+
+//   form
+    form{
+        color: $mediumGrey;
+        .form-head{
+            color: $black;
+        }
+
+        input, .textarea{
+            border: 1px solid #828FA340;
+            background-color: transparent;
+            &:focus{
+                outline: 1px solid $blue;
+            }
+        }
+
+        .selected-options{
+            border: 1px solid #828FA340;
+            color: $black;
+            &:hover{
+                border-color: $blue;
+            }
+            .icon{
+                color: $blue;
+            }
+        }
+
+        .custom-options{
+            background-color: $white;
+            box-shadow: -1px -1px 7px rgb(163, 163, 163);
+            
+            .custom-opt:hover{
+                color: $blue;
+                background-color: #6460c733;
+            }
+        }
+    }
+
+    .view-task{
+        color: $black;
+
+        .opt-btn{
+            color: $mediumGrey;
+            &:hover{
+                color: #000000a4;
+            }
+        }
+        .task-description,.subtask-stat, .task-status p{
+            color: $mediumGrey;
+        }
+
+        .selected-options{
+            border: 1px solid #828FA3;
+        }
+        
+        .subtask{
+            background-color: $lightGrey;
+            .icon{
+                color: #828FA3
+            }
+            &.done{
+                p{
+                    color: #00000080;
+                }
+                .icon svg{
+                    fill: $blue;
+                }
+            }
+            &:hover{
+                background-color: #635FC740;
+            }
+        }
+        .task-status .icon{
+            color: $blue;
+        }
+    }
+//   Others
+
+  .modal{
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .modal-content{
+        background-color: $white;
+    }
+  }
+  .main {
+    background-color: $lightGrey;
+  }
+}

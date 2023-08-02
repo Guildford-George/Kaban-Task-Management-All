@@ -1,0 +1,91 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  password      String
+  loginId       String   @unique @default(uuid())
+  resetPassword Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  role          Role
+  user          User?
+  board         Board[]
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  firstname String
+  lastname  String
+  loginId   String  @unique
+  account   Account @relation(fields: [loginId], references: [loginId], onDelete: Cascade)
+  updatedAt DateTime @updatedAt
+}
+
+model Board {
+  id        Int      @id @default(autoincrement())
+  boardId   String   @unique @default(uuid())
+  boardName String
+  createdAt DateTime @default(now())
+  createdBy String
+  account   Account  @relation(fields: [createdBy], references: [loginId], onDelete: Cascade)
+  columns   Column[]
+  updatedAt DateTime @updatedAt
+
+  @@unique([boardName, createdBy])
+}
+
+model Column {
+  id         Int    @id @default(autoincrement())
+  columnId   String @unique @default(uuid())
+  columnName String
+  itemOrder  Int
+  boardId    String
+  board      Board  @relation(fields: [boardId], references: [boardId], onDelete: Cascade)
+  tasks      Task[]
+  updatedAt DateTime @updatedAt
+
+  @@unique([boardId, columnName])
+}
+
+model Task {
+  id          Int       @id @default(autoincrement())
+  taskId      String    @unique @default(uuid())
+  title       String
+  description String
+  createdAt   DateTime  @default(now())
+  columnId    String
+  column      Column    @relation(fields: [columnId], references: [columnId], onDelete: Cascade)
+  itemOrder   Int
+  subtasks    Subtask[]
+  updatedAt DateTime @updatedAt
+
+  @@unique([columnId, title])
+}
+
+model Subtask {
+  id        Int      @id @default(autoincrement())
+  subtaskId String    @unique @default(uuid())
+  title     String
+  done      Boolean  @default(false)
+  taskId    String
+  Task      Task     @relation(fields: [taskId], references: [taskId], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+}
+
+enum Role {
+  ADMIN
+  USER
+}

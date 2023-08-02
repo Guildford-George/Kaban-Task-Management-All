@@ -1,0 +1,13 @@
+.mainpage{
+    width: 100%;
+    .orientation{
+        display: flex;
+    }
+    .sidebar-btn{
+        position: absolute;
+        left: 0;
+        bottom: 20%;
+        padding: 10px 15px 10px 5px;
+        border-radius: 0 20px 20px 0;
+    }
+}
